@@ -7,6 +7,10 @@ const index = ({products}) => {
      <Head>
        <title>Marketplace</title>
      </Head>
+     <button onClick={ ()=>{window.location = "http://localhost:3000/shipment"}}
+    >
+      {/* shipment */}
+     </button>
      <div className="main">
      {
        products.map(product=><Products key={product.id}product ={product}/>)
