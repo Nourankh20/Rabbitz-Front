@@ -1,0 +1,26 @@
+
+.nav{
+    background-color: green;
+    padding: 20px;
+    box-shadow: 2px 1px 1px #cccc;
+}
+.container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.container ul{
+    display: flex;
+
+}
+
+.container ul li{
+    margin-left: 30px;
+}
+.container ul li a{
+    color: rgb(15,15,15)
+}
+.logo{
+    font-size: 2rem;
+    font-weight: 100;
+}
