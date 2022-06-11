@@ -1,14 +1,22 @@
 import Image from "next/image";
+import Styles from "./../../styles/singleProduct.module.css";
+import Head from "next/head";
 const singleProduct = ({product}) => {
     const{title,price,id,description,category,image} = product
     return(
-        <div className="container">
-            <div><Image src={image} width ="300" height = "500"/></div>
+        <div className={Styles.product +" container"}>
+            <Head><title>{title}: Page</title></Head>
+            <div className={Styles.image}><Image src={image} width ="300" height = "500"/></div>
             <div>
                 <h2>{title}</h2>
                 <h3>{category}</h3>
-                <h1>{price}</h1>
+                <h1>{price} EGP</h1>
                 <p>{description}</p>
+                <div className={Styles.wrapper}>
+                    
+                    <span className={Styles.num}>Purchase</span>
+                    
+                </div>
             </div>
         </div>
     );
@@ -40,3 +48,4 @@ export async function getStaticProps(context) {
         props:{product}
     }
 }
+
