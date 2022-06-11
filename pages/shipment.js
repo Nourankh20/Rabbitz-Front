@@ -1,5 +1,6 @@
 import Head from "next/head";
 //import Image from "react-konva";
+import Styles from "../styles/shipping.module.css";
 import Image from "next/image";
 import {
   Button,
@@ -18,7 +19,7 @@ export default function Home() {
   //const [buttonState, setButtonState] = useState("true");
 
   //REMOVE FLAG WHEN STATES ARE FINALISED (FLAG FOR TESTING). LEAVE RETURNED,DELIVERED AND SHIPPED BELOW(DONT COMMENT OR DELETE)
-  
+
   let returned = "b";
   let delivered = "b";
   let shipped = "b";
@@ -34,8 +35,6 @@ export default function Home() {
   if (flag === "shipped" || flag === "delivered" || flag === "returned") {
     shipped = "a";
   }
-
-
 
   //States
   if (shippingState === "returned") {
@@ -74,7 +73,7 @@ export default function Home() {
     }
   }
   return (
-    <div style={{ color: "#00573f" }} className="body">
+    <div style={{ color: "#defe11" }} className="body">
       <Head>
         <link
           rel="stylesheet"
@@ -95,7 +94,7 @@ export default function Home() {
           </a>
         </h1>
 
-        <p style={{ color: "#defe11" }} className="description">
+        <p style={{ color: "#defe11" }} className={Styles.description}>
           Shipping Status
         </p>
 
@@ -116,6 +115,7 @@ export default function Home() {
                 }
                 height={100}
                 width={35}
+                alt="1646429235054"
               />
             </check>
             <check>
@@ -129,6 +129,7 @@ export default function Home() {
                 }
                 height={35}
                 width={35}
+                alt="1646429235054"
               />
               <detail className={shipped}>Order Shipped</detail>
             </check>
@@ -141,6 +142,7 @@ export default function Home() {
                 }
                 height={100}
                 width={35}
+                alt="1646429235054"
               />
             </check>
             <check>
@@ -152,6 +154,7 @@ export default function Home() {
                 }
                 height={35}
                 width={35}
+                alt="1646429235054"
               />
               <detail className={delivered}>Order Delivered</detail>
             </check>
@@ -164,6 +167,7 @@ export default function Home() {
                 }
                 height={100}
                 width={35}
+                alt="1646429235054"
               />
             </check>
             <check>
@@ -173,6 +177,7 @@ export default function Home() {
                 }
                 height={35}
                 width={35}
+                alt="1646429235054"
               />
               <detail className={returned}>Returned</detail>
             </check>
@@ -183,6 +188,7 @@ export default function Home() {
                 background: "#defe11",
                 padding: 12,
                 fontSize: 20,
+                marginLeft: 440,
               }}
             >
               Return Order
@@ -203,13 +209,14 @@ export default function Home() {
         }
 
         main {
-          padding: 5rem 0;
+          padding: 3rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           background: #00573f;
+          
         }
 
         footer {
@@ -241,14 +248,15 @@ export default function Home() {
           text-decoration: none;
         }
         .button {
-          background-color: "#defe11";
+          background-color: #defe11;
           border: none;
-          color: "#00573f";
+          color: #00573f;
           padding: 15px 32px;
           text-align: center;
           text-decoration: none;
           display: inline-block;
           font-size: 16px;
+          margin-left: 100px;
         }
         .button1 {background-color: #4CAF50;}
 
@@ -294,11 +302,11 @@ export default function Home() {
 
         .card {
           width: 650px;
-          height: 500px;
+          height: 600px;
           background: #00573f;
           margin: 3rem;
           flex-basis: 95%;
-          padding: 2rem;
+          padding:1.7rem;
           text-align: left;
           color: #defe11;
           text-decoration: none;

@@ -9,7 +9,7 @@ const index = ({products}) => {
      </Head>
      <button onClick={ ()=>{window.location = "http://localhost:3000/shipment"}}
     >
-      {/* shipment */}
+      shipment
      </button>
      <div className="main">
      {
