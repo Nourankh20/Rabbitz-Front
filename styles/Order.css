@@ -1,11 +1,17 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('los_andes__lota_grotesque_alt_1_black-webfont.woff') format('woff');
+}
 .App {
     text-align:center; 
+    font-family: 'MyWebFont';
   
   }
   
   .App-logo {
     height: 15vmin;
     pointer-events: none;
+    font-family: 'MyWebFont';
   
   
   
@@ -20,7 +26,7 @@
     height: 50px;
     width: 200px;
     border-style: hidden;
-    
+    font-family: 'MyWebFont';
   }
   .orderButton{
     background-color:#196838;
@@ -30,7 +36,7 @@
     border-radius: 6px;
     height: 22px;
     border-style: hidden;
-    
+    font-family: 'MyWebFont';
   }
   .input{
     background-color:#196838;
@@ -45,7 +51,7 @@
     height: 50px;
     width: 200px;
     border-style: hidden;
-    
+    font-family: 'MyWebFont';
   }
   
   .App-header {
@@ -59,10 +65,12 @@
     color: white;
     color:#DFFC18;
     font-weight:bold;
+    font-family: 'MyWebFont';
   }
   
   .App-link {
     color: #61dafb;
+    font-family: 'MyWebFont';
   }
   
   .Card{
@@ -72,10 +80,12 @@
       position: absolute;
       padding: 1% ;
       padding-left: 30%;
+      font-family: 'MyWebFont';
   }
   
   .Image{
     flex: 1 1 120px;
+    font-family: 'MyWebFont';
   }
   .Order{
     align-self: center;
@@ -90,6 +100,7 @@
     border-right: 2px solid #e6ecf0;
     border-radius: 4mm;
     margin-bottom: 1%;
+    font-family: 'MyWebFont';
   
   }
   .Stripe{
@@ -98,12 +109,14 @@
     color: #196838;
     font-weight: bold;
     width: 100%;
+    font-family: 'MyWebFont';
   }
   .Item {
     display: flex;
     flex-wrap: wrap;
     padding: 0% 0% 0% 0%;
     width: 100%;
+    font-family: 'MyWebFont';
   }
   .StatusCard { 
     display: inline-block;
@@ -113,6 +126,7 @@
     background-color: rgba(252, 185, 185, 0.693);
     border-radius:20cm;
     margin-top: 10%;
+    font-family: 'MyWebFont';
   
   }
   .Status{
@@ -120,6 +134,7 @@
     font-weight: bold;
     color: rgb(253, 59, 59);
     margin-top:2px;
+    font-family: 'MyWebFont';
   }
   .price{
     display: flex;
@@ -128,9 +143,11 @@
     padding: 0% 0% 0% 80%;
     margin-top: -10%;
     width: 100%;
+    font-family: 'MyWebFont';
   
   }
   .img {
     max-width: 68px;
     border-radius: 100%;
+    font-family: 'MyWebFont';
   }

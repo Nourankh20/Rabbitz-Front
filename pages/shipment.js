@@ -3,6 +3,8 @@ import Head from "next/head";
 import Styles from "../styles/shipping.module.css";
 import Image from "next/image";
 import Swal from "sweetalert2";
+// font-family: 'MyWebFont';
+// import { useState, useEffect } from "react";
 //import {
   //Button,
 //Form,
@@ -12,12 +14,12 @@ import Swal from "sweetalert2";
 //FormFeedback,
 //} from "reactstrap";
 // import styles from "..styles/Home.module.css"
-import React, { useState } from "react";
-//import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+import React, {useEffect, useState } from "react";
+import Link from "next/link";
 //#7a862f
 export default function Home() {
   const [shippingState, setShippingState] = useState("placed");
-  //const [buttonState, setButtonState] = useState("true");
+  //const [buttonState, setButtonState] = useState("false");
 
   //REMOVE FLAG WHEN STATES ARE FINALISED (FLAG FOR TESTING). LEAVE RETURNED,DELIVERED AND SHIPPED BELOW(DONT COMMENT OR DELETE)
 
@@ -59,37 +61,38 @@ export default function Home() {
   //   setButtonState(buttonState)
   //  };
 
-  //   const handleOnClick = () => {
-  //     returnButton();
-  //     if (shippingState == "placed"){
-  //       setShippingState("returned");
-  //   }
-  // };
-
   //Return Order Button
+  // useEffect(() => { 
+  //   if (shippingState == "placed") {
+  //       setButtonState("true");
+  //     }
+  // });
+
   function handleOnClick() {
-    //returnButton();
     if (shippingState === "placed") {
       setShippingState("returned");
+      Swal.fire({
+        icon: "success",
+        title: "Order Returned",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
-    Swal.fire({
-      icon: "success",
-      title: "Order Returned",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+    else {
+      Swal.fire({
+        icon: "error",
+        title: `Order has already been ${shippingState}`,
+        showConfirmButton: true,
+        timer: 5000,
+      });
+    }
   }
   return (
     <div style={{ color: "#defe11" }} className="body">
-      <Head>
-        <link
-          rel="stylesheet"
-          // href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-        />
-      </Head>
+      
 
       <main>
-        <h1 style={{ color: "#00573f", fontSize: 60}}>
+        <h1 style={{ color: "#00573f", fontSize: 60, fontFamily: "MyWebFont"}}>
           Rabbit Mart 
           <br></br>
           </h1>
@@ -197,16 +200,20 @@ export default function Home() {
                 background: "#00573f",
                 padding: 12,
                 fontSize: 20,
-                marginLeft: 440,
+                marginLeft: 433,
                 borderColor: "white",
-                borderRadius: 12
+                borderRadius: 12,
+                fontFamily: "MyWebFont"
               }}
+              
             >
               Return Order
             </button>
           </a>
+        
         </div>
       </main>
+      
 
       <style jsx>{`
         .container {
@@ -217,6 +224,7 @@ export default function Home() {
           justify-content: center;
           align-items: center;
           backround-color: #00573f;
+          font-family: "MyWebFont"
         }
         main {
           padding: 3rem 0;
@@ -226,6 +234,7 @@ export default function Home() {
           justify-content: center;
           align-items: center;
           background: white;
+          font-family: "MyWebFont"
           
         }
         footer {
@@ -243,14 +252,17 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
+          font-family: "MyWebFont"
         }
         .a {
           color: #00573f;
           text-decoration: none;
+          font-family: "MyWebFont"
         }
         .b {
           color: gray;
           text-decoration: none;
+          font-family: "MyWebFont"
         }
         .button {
           background-color: #defe11;
@@ -262,25 +274,30 @@ export default function Home() {
           display: inline-block;
           font-size: 16px;
           margin-left: 100px;
+          font-family: "MyWebFont"
         }
         .button1 {background-color: #4CAF50;}
         .title a {
           background: #00573f;
           text-decoration: none;
+          font-family: "MyWebFont"
         }
         .title a:hover,
         .title a:focus,
         .title a:active {
           text-decoration: underline;
+          font-family: "MyWebFont"
         }
         .title {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
+          font-family: "MyWebFont"
         }
         .title,
         .description {
           text-align: center;
+          font-family: "MyWebFont"
         }
         .description {
           line-height: 1.5;
@@ -288,6 +305,7 @@ export default function Home() {
           background: #00573f;
           color: #00573f;
           text-decoration: underline;
+          font-family: "MyWebFont"
         }
         .grid {
           display: flex;
@@ -296,6 +314,7 @@ export default function Home() {
           flex-wrap: wrap;
           max-width: 800px;
           margin-top: 1rem;
+          font-family: "MyWebFont"
         }
         .card {
           width: 650px;
@@ -310,6 +329,7 @@ export default function Home() {
           border: 5px solid #00573f;
           border-radius: 20px;
           transition: color 0.15s ease, border-color 0.15s ease;
+          font-family: "MyWebFont"
         }
         .card:hover,
         .card:focus,
@@ -320,11 +340,13 @@ export default function Home() {
         .card h3 {
           margin: 0 0 1rem 0;
           font-size: 1.8rem;
+          font-family: "MyWebFont"
         }
         .card p {
           margin: 0;
           font-size: 1.25rem;
           line-height: 1.5;
+          font-family: "MyWebFont"
         }
         .card check {
           width: 100%;
@@ -332,12 +354,14 @@ export default function Home() {
           display: flex;
           justify-content: left;
           align-items: center;
+          font-family: "MyWebFont"
         }
         .card detail {
           padding:0 1.2rem;
           font-size: 1.8rem;
           flex: 1;
           display: flex;
+          font-family: "MyWebFont"
          
         }
         
@@ -363,8 +387,11 @@ export default function Home() {
         }
         * {
           box-sizing: border-box;
+          fontFamily: "MyWebFont"
         }
       `}</style>
+     
+      
     </div>
   );
 }

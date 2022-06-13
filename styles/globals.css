@@ -1,24 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:wght@100;300;500&display=swap');
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('los_andes__lota_grotesque_alt_1_black-webfont.woff') format('woff');
+}
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  /* font-family: 'Roboto', Arial, Helvetica, sans-serif; */
+  font-family: 'MyWebFont';
   
 }
 
 
 a{
   text-decoration: none;
-  color:black
+  color:black;
+  font-family: 'MyWebFont';
 }
 ul{
   list-style-type: none;
+  font-family: 'MyWebFont';
 }
 body {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'MyWebFont';
 
   
 
@@ -28,6 +36,7 @@ body {
   width: 1100px;
   max-width: 70%;
   margin: 0 auto;
+  font-family: 'MyWebFont';
 
 
 }
@@ -38,6 +47,7 @@ body {
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   grid-gap:2rem;
   padding: 50px 0;
+  font-family: 'MyWebFont';
 }
 .button{
   padding: 10px 30px;
@@ -46,6 +56,7 @@ body {
   margin-top: 20px;
   text-decoration: none;
   display: block;
+  font-family: 'MyWebFont';
 }
 
 
@@ -60,6 +71,7 @@ body {
   border-radius: 10px;
   box-shadow: 3px 3px 40px #f5f5f5;
   position: relative;
+  font-family: 'MyWebFont';
 }
 
 #form input,
@@ -72,6 +84,7 @@ body {
   position: relative;
   width: 100%;
   background-color: #f5f5f5;
+  font-family: 'MyWebFont';
 }
 
 #form h1 {
@@ -80,6 +93,7 @@ body {
   white-space: nowrap;
   font-family: 'MyWebFont';
   font-size: 2rem;
+  font-family: 'MyWebFont';
 }
 
 #form h4 {
@@ -89,6 +103,7 @@ body {
 
 .mt {
   margin-top: 8rem;
+  font-family: 'MyWebFont';
 }
 
 #form .input-container {
@@ -101,6 +116,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5rem;
+  font-family: 'MyWebFont';
 }
 
 .modal-header {
@@ -118,6 +134,7 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: 10px;
+  
 }
 
 #form button {
@@ -150,6 +167,7 @@ body {
   color: #00573f;
   z-index: -1;
   opacity: 90%;
+  font-family: 'MyWebFont';
 }
 
 #formTest button{
@@ -173,6 +191,7 @@ body {
 #form button:hover:before {
   width: 100%;
   transition: .2s all;
+  font-family: 'MyWebFont';
 }
 
 #card {
@@ -193,6 +212,7 @@ body {
   background-position: center;
   color: #eee;
   filter: drop-shadow(1px 3px 10px #222);
+  font-family: 'MyWebFont';
 
   animation: fadeIn .2s linear 1;
 }
@@ -211,6 +231,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: 70px;
+  font-family: 'MyWebFont';
 }
 
 #card .sticker {
@@ -221,6 +242,7 @@ body {
   background-size: cover;
   object-fit: contain;
   border-radius: 5px;
+  font-family: 'MyWebFont';
 }
 
 #visa .logo {
@@ -228,6 +250,7 @@ body {
   float:right; 
   position: relative;   
   margin-right: -50px;  
+  font-family: 'MyWebFont';
 }
 
 #mastercard .logo { 
@@ -236,6 +259,7 @@ body {
   position:relative; 
   margin-right: -0px;  
   margin-top: 5px;
+  font-family: 'MyWebFont';
 } 
 
   .image1 { 
@@ -243,6 +267,7 @@ body {
     position: relative; 
     float: right;
     margin-right: 0px;   
+    font-family: 'MyWebFont';
   } 
 
 #card .body {
@@ -251,6 +276,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 60%;
+  font-family: 'MyWebFont';
 }
 
 #card .footer {
@@ -259,6 +285,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 75px;
+  font-family: 'MyWebFont';
 }
 
 /*# sourceMappingURL=/styles.164d45a1.css.map */

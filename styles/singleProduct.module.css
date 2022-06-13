@@ -1,14 +1,16 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src:  url('los_andes__lota_grotesque_alt_1_black-webfont.woff') format('woff');
+}
 .product{
     display: flex;
     margin-top: 100px;
-    
-    
-  
-
+    font-family: 'MyWebFont';
 }
 
 .image{
     margin-right: 100px;
+    font-family: 'MyWebFont';
 }
 .wrapper{
 
@@ -23,6 +25,7 @@
     box-shadow: 0 5px 10px;
     margin-left: 30px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    font-family: 'MyWebFont';
 
 }
 .wrapper span{
@@ -31,6 +34,7 @@
     font-size:23px;
     font-weight: 300;
     cursor: pointer;
+    font-family: 'MyWebFont';
     
     
 }
@@ -38,4 +42,5 @@
     font-size: 23px;
     border-right:2px solid rgba(0,0,0,0.2);
     border-left:2px solid rgba(0,0,0,0.2);
+    font-family: 'MyWebFont';
 }
