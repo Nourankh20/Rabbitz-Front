@@ -13,7 +13,7 @@ const Navbar = () => {
                 <Link href = "/about"><a>about</a></Link>
             </li>
             <li>
-                <Link href = "/cart"><a>cart</a></Link>
+                <Link href = "/shipment"><a>Shipment</a></Link>
             </li>
         </ul>
     </div>
