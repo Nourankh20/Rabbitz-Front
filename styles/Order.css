@@ -1,0 +1,136 @@
+.App {
+    text-align:center; 
+  
+  }
+  
+  .App-logo {
+    height: 15vmin;
+    pointer-events: none;
+  
+  
+  
+  }
+  
+  .Button{
+    background-color:#196838;
+    color: #DFFC18;
+    font-weight:bold;
+    font-size:17px;
+    border-radius: 6px;
+    height: 50px;
+    width: 200px;
+    border-style: hidden;
+    
+  }
+  .orderButton{
+    background-color:#196838;
+    color: #DFFC18;
+    font-weight:bold;
+    font-size:11px;
+    border-radius: 6px;
+    height: 22px;
+    border-style: hidden;
+    
+  }
+  .input{
+    background-color:#196838;
+    color: #DFFC18;
+    font-weight:bold;
+    font-size:17px;
+    background-blend-mode:normal;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius:6px;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    height: 50px;
+    width: 200px;
+    border-style: hidden;
+    
+  }
+  
+  .App-header {
+    background-color: #196838;
+    min-height: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+    color: white;
+    color:#DFFC18;
+    font-weight:bold;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .Card{
+      width: 50%;
+      display: flex;
+       /* flex-wrap: wrap; */
+      position: absolute;
+      padding: 1% ;
+      padding-left: 30%;
+  }
+  
+  .Image{
+    flex: 1 1 120px;
+  }
+  .Order{
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #e6ecf0;
+    border-top: 2px solid #e6ecf0;
+    border-left: 4px solid #e6ecf0;
+    border-right: 2px solid #e6ecf0;
+    border-radius: 4mm;
+    margin-bottom: 1%;
+  
+  }
+  .Stripe{
+    margin-top: -1%;
+    font-size: 6mm;
+    color: #196838;
+    font-weight: bold;
+    width: 100%;
+  }
+  .Item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 0% 0% 0%;
+    width: 100%;
+  }
+  .StatusCard { 
+    display: inline-block;
+    margin-left:50px;
+    height: 20pt;
+    width: 75pt; 
+    background-color: rgba(252, 185, 185, 0.693);
+    border-radius:20cm;
+    margin-top: 10%;
+  
+  }
+  .Status{
+    font-size:4mm;
+    font-weight: bold;
+    color: rgb(253, 59, 59);
+    margin-top:2px;
+  }
+  .price{
+    display: flex;
+    font-size: 5mm;
+    font-weight: 700;
+    padding: 0% 0% 0% 80%;
+    margin-top: -10%;
+    width: 100%;
+  
+  }
+  .img {
+    max-width: 68px;
+    border-radius: 100%;
+  }
