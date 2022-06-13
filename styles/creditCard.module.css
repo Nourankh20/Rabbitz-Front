@@ -1,49 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('los_andes__lota_grotesque_alt_1_black-webfont.woff') format('woff');
 }
 
-
-a{
-  text-decoration: none;
-  color:black
-}
-ul{
-  list-style-type: none;
-}
-body {
-  font-family: "Roboto", sans-serif;
-
-  
-
+.body {
+  min-height: 100vh;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #defe11;;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .container {
-  width: 1100px;
-  max-width: 70%;
-  margin: 0 auto;
-
-
-}
-
-
-.main{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  grid-gap:2rem;
-  padding: 50px 0;
-}
-.button{
-  padding: 10px 30px;
-  color: #fff;
-  background-color: #3f9d82;
-  margin-top: 20px;
-  display: block;
+  max-width: 1200px;
+  margin: auto;
 }
 
 #form {
@@ -259,8 +238,3 @@ body {
 }
 
 /*# sourceMappingURL=/styles.164d45a1.css.map */
-
-
-
-
-

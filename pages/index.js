@@ -1,6 +1,7 @@
 import Products from "../components/Products";
 import Navbar from "./../components/Navbar"
 import Head from "next/head";
+import { Button, Modal, Form } from "react-bootstrap-v5";
 const index = ({products}) => {
   return(
    <main className="container">
@@ -12,6 +13,16 @@ const index = ({products}) => {
        products.map(product=><Products key={product.id}product ={product}/>)
      }
      </div>
+     <Button
+          className="order"
+          variant="dark"
+          type="submit"
+          onClick={ ()=>{window.location = "http://localhost:3000/payment"}}
+        >
+          Confirm order and pay
+        </Button>
+     {/* <button onClick={ ()=>{window.location = "http://localhost:3000/payment"}}> PAYMENT </button> */}
+
    </main>
   );
 }
