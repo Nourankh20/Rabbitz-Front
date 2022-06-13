@@ -204,9 +204,7 @@ export default function Home() {
                 borderColor: "white",
                 borderRadius: 12,
                 fontFamily: "MyWebFont"
-              }}
-              
-            >
+              }}>
               Return Order
             </button>
           </a>
