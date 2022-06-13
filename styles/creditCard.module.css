@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
+
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('los_andes__lota_grotesque_alt_1_black-webfont.woff') format('woff');
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #defe11;;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}

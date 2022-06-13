@@ -1,7 +1,9 @@
 import Products from "../components/Products";
+import { useRouter } from "next/router";
 import Navbar from "./../components/Navbar"
 import Head from "next/head";
 const index = ({products}) => {
+  const router = useRouter();
   return(
    <main className="container">
      <Head>
@@ -18,9 +20,10 @@ const index = ({products}) => {
 export default index
 
 
-export async function getStaticProps(){
-  const req = await fetch("https://fakestoreapi.com/products");
-  const products = await req.json();
+export async function getStaticProps({ params = {}}){
+  const req = await fetch("https://products-cyan.vercel.app/products");
+  const data = await req.text();
+  const products = JSON.parse(data);
   return{
     props:{products}
   }

@@ -2,19 +2,20 @@ import Image from "next/image";
 import Styles from "./../../styles/singleProduct.module.css";
 import Head from "next/head";
 const singleProduct = ({product}) => {
-    const{title,price,id,description,category,image} = product
+    console.log(product);
+    const{name,price,_id,category,image,weight,measurement} = product
     return(
         <div className={Styles.product +" container"}>
-            <Head><title>{title}: Page</title></Head>
-            <div className={Styles.image}><Image src={image} width ="300" height = "500"/></div>
+            <Head><title>{name}: Page</title></Head>
+            <div className={Styles.image}><img src={image} width ="300" height = "300"/></div>
             <div>
-                <h2>{title}</h2>
+                <h2>{name}</h2>
                 <h3>{category}</h3>
+                <h4>{weight} {measurement}</h4>
                 <h1>{price} EGP</h1>
-                <p>{description}</p>
                 <div className={Styles.wrapper}>
                     
-                    <span className={Styles.num}>Purchase</span>
+                    <span className={Styles.num}><a href="/payment">Purchase</a></span>
                     
                 </div>
             </div>
@@ -25,13 +26,16 @@ export default singleProduct;
 
 
 export async function getStaticPaths() {
-    const req = await fetch('https://fakestoreapi.com/products');
+    const req = await fetch('https://products-cyan.vercel.app/products');
     const products = await req.json();
     const paths = products.map(product=> {
+       
         return{
-            params:{id:product.id.toString()}
+            params:{_id:product._id.toString()}
+            
            
         }
+        
     })
 
     return{
@@ -41,8 +45,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const id = context.params.id;
-    const req = await fetch('https://fakestoreapi.com/products/' + id);
+    const id = context.params._id;
+    const req = await fetch('https://products-cyan.vercel.app/products/' + id);
     const product = await req.json();
     return{
         props:{product}
