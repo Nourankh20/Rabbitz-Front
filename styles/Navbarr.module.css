@@ -1,6 +1,6 @@
 
 .nav{
-    background-color: #3f9d82;
+    background-color: #00573f;
     padding: 20px;
     box-shadow: 2px 1px 1px #cccc;
 }
@@ -18,9 +18,10 @@ align-items: center;
     margin-left: 30px;
 }
 .container ul li a{
-    color: rgb(15,15,15)
+    color: #defe11
 }
 .logo{
-    font-size: 2rem;
-    font-weight: 100;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #defe11
 }

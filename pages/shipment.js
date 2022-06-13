@@ -2,18 +2,19 @@ import Head from "next/head";
 //import Image from "react-konva";
 import Styles from "../styles/shipping.module.css";
 import Image from "next/image";
+import Swal from "sweetalert2";
 //import {
   //Button,
-  //Form,
+//Form,
  // FormGroup,
  // Input,
  // Label,
-  //FormFeedback,
+//FormFeedback,
 //} from "reactstrap";
 // import styles from "..styles/Home.module.css"
 import React, { useState } from "react";
 //import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
+//#7a862f
 export default function Home() {
   const [shippingState, setShippingState] = useState("placed");
   //const [buttonState, setButtonState] = useState("true");
@@ -25,16 +26,16 @@ export default function Home() {
   let shipped = "b";
 
   //FLAGS
-  let flag = "placed";
-  if (flag === "returned") {
-    returned = "a";
-  }
-  if (flag === "delivered" || flag === "returned") {
-    delivered = "a";
-  }
-  if (flag === "shipped" || flag === "delivered" || flag === "returned") {
-    shipped = "a";
-  }
+  // let flag = "placed";
+  // if (flag === "returned") {
+  //   returned = "a";
+  // }
+  // if (flag === "delivered" || flag === "returned") {
+  //   delivered = "a";
+  // }
+  // if (flag === "shipped" || flag === "delivered" || flag === "returned") {
+  //   shipped = "a";
+  // }
 
   //States
   if (shippingState === "returned") {
@@ -52,7 +53,7 @@ export default function Home() {
   }
 
   // function returnButton(){
-  //   if (flag == "placed") {
+  //   if (shippingState == "placed") {
   //     buttonState = "false";
   //   }
   //   setButtonState(buttonState)
@@ -71,6 +72,12 @@ export default function Home() {
     if (shippingState === "placed") {
       setShippingState("returned");
     }
+    Swal.fire({
+      icon: "success",
+      title: "Order Returned",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   }
   return (
     <div style={{ color: "#defe11" }} className="body">
@@ -82,24 +89,26 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 style={{ color: "#defe11" }}>
-          Rabbit Mart
+        <h1 style={{ color: "#00573f", fontSize: 60}}>
+          Rabbit Mart 
+          <br></br>
+          </h1>
           <a href="https://imgbb.com/">
             <img
-              style={{ marginLeft: 8 }}
+              // style={{ marginLeft: 75}}
               src="https://i.ibb.co/3ccW2mr/1646429235054.jpg"
               alt="1646429235054"
               border="0"
             />
           </a>
-        </h1>
+        
 
-        <p style={{ color: "#defe11" }} className={Styles.description}>
+        <p style={{ color: "#00573f" }} className={Styles.description}>
           Shipping Status
         </p>
 
         <div className="grid">
-          <a style={{ color: "#defe11" }} className="card">
+          <a style={{ color: "#00573f" }} className="card">
             <check>
               <Image src="/checkcircle.svg" height={39} width={39} />
               <detail>Order Placed</detail>
@@ -107,9 +116,9 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "shipped" ||
-                  flag === "delivered" ||
-                  flag === "returned"
+                  shippingState === "shipped" ||
+                  shippingState === "delivered" ||
+                  shippingState === "returned"
                     ? "/arrowdown.svg"
                     : "/arrowdowndimmed.svg"
                 }
@@ -121,9 +130,9 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "shipped" ||
-                  flag === "delivered" ||
-                  flag === "returned"
+                  shippingState === "shipped" ||
+                  shippingState === "delivered" ||
+                  shippingState === "returned"
                     ? "/checkcircle.svg"
                     : "/emptycircle.svg"
                 }
@@ -136,7 +145,7 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "delivered" || flag === "returned"
+                  shippingState === "delivered" || shippingState === "returned"
                     ? "/arrowdown.svg"
                     : "/arrowdowndimmed.svg"
                 }
@@ -148,7 +157,7 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "delivered" || flag === "returned"
+                  shippingState === "delivered" || shippingState === "returned"
                     ? "/checkcircle.svg"
                     : "/emptycircle.svg"
                 }
@@ -161,7 +170,7 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "returned"
+                  shippingState === "returned"
                     ? "/arrowdown.svg"
                     : "/arrowdowndimmed.svg"
                 }
@@ -173,7 +182,7 @@ export default function Home() {
             <check>
               <Image
                 src={
-                  flag === "returned" ? "/checkcircle.svg" : "/emptycircle.svg"
+                  shippingState === "returned" ? "/checkcircle.svg" : "/emptycircle.svg"
                 }
                 height={35}
                 width={35}
@@ -184,11 +193,13 @@ export default function Home() {
             <button
               onClick={handleOnClick}
               style={{
-                color: "#00573f",
-                background: "#defe11",
+                color: "#defe11",
+                background: "#00573f",
                 padding: 12,
                 fontSize: 20,
                 marginLeft: 440,
+                borderColor: "white",
+                borderRadius: 12
               }}
             >
               Return Order
@@ -214,7 +225,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: #00573f;
+          background: white;
           
         }
         footer {
@@ -234,11 +245,11 @@ export default function Home() {
           align-items: center;
         }
         .a {
-          color: #defe11;
+          color: #00573f;
           text-decoration: none;
         }
         .b {
-          color: #7a862f;
+          color: gray;
           text-decoration: none;
         }
         .button {
@@ -289,22 +300,22 @@ export default function Home() {
         .card {
           width: 650px;
           height: 600px;
-          background: #00573f;
+          background: white;
           margin: 3rem;
           flex-basis: 95%;
           padding:1.7rem;
           text-align: left;
           color: #defe11;
           text-decoration: none;
-          border: 5px solid #defe11;
+          border: 5px solid #00573f;
           border-radius: 20px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #defe11;
+          border-color: #defe11;
         }
         .card h3 {
           margin: 0 0 1rem 0;
