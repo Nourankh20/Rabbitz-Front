@@ -19,7 +19,6 @@ function Order() {
   
     },[])
 
-
     const find =async (e) =>{
       axios.get(
         `http://localhost:3001/order/${order}`
@@ -29,14 +28,8 @@ function Order() {
       setOrders(data.data)
       setFound(true)
     });
-
-
     }
-  
-    // find();
 
-    // console.log('order', orders)
- 
     const handleSubmit = () => {
       
       setOrders([...orders]);
@@ -66,12 +59,11 @@ function Order() {
       </header>
       {!found &&
         <div>
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <img src={rabbit-t.png} className={styles.Applogo} alt="logo" />
           <p style={{ color: '#196838', fontWeight: 'bold', fontSize: 20 }}>
             You have no orders yet!
           </p>
           <button className={styles.Button} 
-          // onClick={() => {window.location('localhost:3000/') }}
           >
             <Link href={`/`}><a className={styles.Button} >Browse Product</a></Link>
 
@@ -112,7 +104,6 @@ function Order() {
 
                     <div className={styles.Item}>
                       <p  >{orders.item} </p>
-                      {/* <img src={require("./milk.jpeg")} className="img" /> */}
                     </div>
                     <div className={styles.price}>
                       <p> {orders.totalPrice/100} EGP</p>
