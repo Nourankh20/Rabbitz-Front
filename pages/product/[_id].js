@@ -2,7 +2,7 @@ import Image from "next/image";
 import Styles from "./../../styles/singleProduct.module.css";
 import Head from "next/head";
 const singleProduct = ({product}) => {
-    console.log(product);
+    
     const{name,price,_id,category,image,weight,measurement} = product
     return(
         <div className={Styles.product +" container"}>
@@ -15,7 +15,7 @@ const singleProduct = ({product}) => {
                 <h1>{price} EGP</h1>
                 <div className={Styles.wrapper}>
                     
-                    <span className={Styles.num}><a href="/payment">Purchase</a></span>
+                    <span className={Styles.num}><a href={`/payment/${_id}`}>Purchase</a></span>
                     
                 </div>
             </div>

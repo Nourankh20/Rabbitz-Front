@@ -3,7 +3,7 @@ import Cleave from "cleave.js/react";
 import { Button, Modal, Form } from "react-bootstrap-v5";
 import { FormFeedback } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Styles from "../styles/creditCard.module.css";
+import Styles from "./../../styles/creditCard.module.css";
 // import "../styles/globals.css"
 import Swal from "sweetalert2";
 
@@ -13,6 +13,8 @@ const imageUrls = [
 ];
 
 export default function App() {
+  const product = ()=>localStorage.getItem('product');
+  console.log(product);
   const [creditCardNum, setCreditCardNum] = useState("");
   const [cardType, setCardType] = useState("");
   const [cardHolder, setCardHolder] = useState("");
