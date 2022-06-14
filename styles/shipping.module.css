@@ -185,3 +185,67 @@
     color: #defe11;
     cursor: grabbing;
   }
+  .card2 {
+    width: 650px;
+    height: 600px;
+    background-color: white;
+    margin: 3rem;
+    flex-basis: 95%;
+    padding:1.7rem;
+    text-align: left;
+    color: #defe11;
+    text-decoration: none;
+    border: 5px solid;
+    border-image:linear-gradient(
+      -45deg,
+      #00573f,
+      #247a62,
+      #6c9610
+     ) 1;
+    animation: rotate 2.5s ease-in infinite;
+    border-radius: 20px;
+    font-family: "MyWebFont"
+  }
+  @keyframes rotate {
+    50%{
+        border-image: linear-gradient(
+          -45deg,
+          #00573f,
+          #247a62,
+          #6c9610
+         ) 1 ;
+    }
+  }
+  .card2:hover,
+  .card2:focus,
+  .card2:active {
+    color: #defe11;
+    border-color: #defe11;
+  }
+  .card2 h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    font-family: "MyWebFont"
+  }
+  .card2 p {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-family: "MyWebFont"
+  }
+  .card2 check {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: "MyWebFont"
+  }
+  .card2 detail {
+    padding:0 1.2rem;
+    font-size: 1.8rem;
+    flex: 1;
+    display: flex;
+    font-family: "MyWebFont"
+   
+  }

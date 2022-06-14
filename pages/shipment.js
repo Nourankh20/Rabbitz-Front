@@ -112,7 +112,8 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <a style={{ color: "#00573f" }} className="card">
+          <figure style={{ color: "#00573f" }} className={Styles.card2}>
+            <figcaption>
             <check>
               <Image src="/checkcircle.svg" height={39} width={39} />
               <detail>Order Placed</detail>
@@ -200,7 +201,8 @@ export default function Home() {
               >
               Return Order
             </button>
-          </a>
+            </figcaption>
+          </figure>
         
         </div>
       </main>
