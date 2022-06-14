@@ -59,7 +59,7 @@ function Order() {
       </header>
       {!found &&
         <div>
-          <img src={rabbit-t.png} className={styles.Applogo} alt="logo" />
+          <img src={'rabbit-t.png'} className={styles.Applogo} alt="logo" />
           <p style={{ color: '#196838', fontWeight: 'bold', fontSize: 20 }}>
             You have no orders yet!
           </p>
@@ -70,7 +70,7 @@ function Order() {
           </button>
           <div style={{marginTop: 20}}>
             <p style={{ color: '#196838', fontWeight: 'bold', fontSize: 20 ,marginTop: 100}}>
-              Or Enter your Oredr ID
+              Or Enter your Order ID
             </p>
             <div>
             <input 
