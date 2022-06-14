@@ -97,7 +97,7 @@ export default function Home() {
           Rabbit Mart 
           <br></br>
           </h1>
-          <a href="https://imgbb.com/">
+          <a>
             <img
               // style={{ marginLeft: 75}}
               src="https://i.ibb.co/3ccW2mr/1646429235054.jpg"
