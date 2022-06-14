@@ -19,10 +19,14 @@ export default function App() {
   const [expireMonth, setExpireMonth] = useState("January");
   const [expireYear, setExpireYear] = useState("2023");
   const [cvv, setCVV] = useState("");
+  const [email, setEmail] = useState(); 
+  const [address, setAddress] = useState(); 
 
   const [creditCardNumState, setCreditCardNumState] = useState("");
   const [cardHolderState, setCardHolderState] = useState("");
   const [cvvState, setCVVState] = useState("");
+  const [emailState, setEmailState] = useState(); 
+  const [addressState, setAddressState] = useState(); 
   // const [expireMonthState, setExpireMonthState] = useState("January");
   // const [expireYearState, setExpireYearState] = useState("2021");
 
@@ -30,6 +34,32 @@ export default function App() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const validateEmail = (value) => {
+    const emailRegex =
+    /^(([^<>()[]\.,;:\s@"]+(.[^<>()[]\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+    let emailState;
+    if (emailRegex.test(value)) {
+      emailState = "has-success";
+      console.log("Success");
+    } else {
+      emailState = "has-danger";
+      console.log("Danger");
+    }
+    setEmailState(emailState);
+  };
+
+  const validateAddress = (value) => {
+    let addressState;
+    if (value.length > 2) {
+      addressState = "has-success";
+      console.log("Success");
+    } else {
+      addressState = "has-danger";
+      console.log("Danger");
+    }
+    setAddressState(addressState);
+  };
 
   const validateCardHolder = (value) => {
     let cardHolderState;
@@ -95,6 +125,18 @@ export default function App() {
   //   setExpireYearState(expireYearState)
   // }
 
+  const handleEmail = (e) => {
+    validateEmail(e.target.rawValue);
+    setEmail(e.target.rawValue);
+    console.log(e.target.value);
+  };
+
+  const handleAddress = (e) => {
+    validateAddress(e.target.rawValue);
+    setAddress(e.target.rawValue);
+    console.log(e.target.value);
+  };
+
   const handleNum = (e) => {
     validateCardNumber(e.target.rawValue);
     setCreditCardNum(e.target.rawValue);
@@ -128,6 +170,11 @@ export default function App() {
     validateCardHolder(cardHolder);
     validateCardNumber(creditCardNum);
     validateCVV(cvv);
+    validateAddress(address); 
+    validateEmail(email);
+
+    console.log("Email: ", emailState)
+    console.log("Address: ", addressState)
 
     console.log("Card Holder: ", cardHolder);
     console.log("Card Holder State: ", cardHolderState);
@@ -137,9 +184,15 @@ export default function App() {
     if (
       cardHolderState === "has-success" &&
       creditCardNumState === "has-success" &&
-      cvvState === "has-success"
+      cvvState === "has-success" && 
+      emailState === "has-success" && 
+      addressState === "has-success"
     ) {
       console.log(
+        "Email: ",
+        email,
+        "Address: ",
+        address,
         "Holder: ",
         cardHolder,
         "Card Number: ",
@@ -153,14 +206,14 @@ export default function App() {
       );
       Swal.fire({
         icon: "success",
-        title: "Success",
+        title: "Success \n \n" +  name,
         showConfirmButton: false,
         timer: 1500,
       });
     } else {
       Swal.fire({
         icon: "error",
-        title: "Please Fill Everything!",
+        title: "Please Fill Everything! \n \n " + "Check Everything",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -182,12 +235,46 @@ export default function App() {
       </div>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header> Confirm payment </Modal.Header>
+        <Modal.Header> Confirm Order </Modal.Header>
         <Modal.Body>
           <div class="col-md-12 text-center">
             <Form>
               <div className={Styles.container}>
                 <form id="form">
+                <div className="input-grp">
+                    <div class="input-container">
+                      <h1> Personal Details </h1>
+                    </div>
+                    
+                    
+                  </div>
+
+                  <div>
+                    <input
+                      name="email"
+                      value={email}
+                      valid={emailState === "has-success"}
+                      invalid={emailState === "has-danger"}
+                      onChange={handleEmail}
+                      type="text"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      name="address"
+                      value={address}
+                      valid={addressState === "has-success"}
+                      invalid={addressState === "has-danger"}
+                      onChange={handleAddress}
+                      type="text"
+                      placeholder="Address"
+                      required
+                    />
+                  </div>
+
                   <div className="input-grp">
                     <div class="input-container">
                       <h1> Credit Card </h1>

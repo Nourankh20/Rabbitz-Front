@@ -14,9 +14,9 @@ const singleProduct = ({product}) => {
                 <h4>{weight} {measurement}</h4>
                 <h1>{price} EGP</h1>
                 <div className={Styles.wrapper}>
-                    
+
                     <span className={Styles.num}><a href="/payment">Purchase</a></span>
-                    
+
                 </div>
             </div>
         </div>
@@ -29,13 +29,13 @@ export async function getStaticPaths() {
     const req = await fetch('https://products-cyan.vercel.app/products');
     const products = await req.json();
     const paths = products.map(product=> {
-       
+
         return{
             params:{_id:product._id.toString()}
-            
-           
+
+
         }
-        
+
     })
 
     return{
@@ -52,4 +52,3 @@ export async function getStaticProps(context) {
         props:{product}
     }
 }
-
