@@ -14,6 +14,7 @@ import Swal from "sweetalert2";
 //FormFeedback,
 //} from "reactstrap";
 // import styles from "..styles/Home.module.css"
+
 import React, {useEffect, useState } from "react";
 import Link from "next/link";
 //#7a862f
@@ -194,17 +195,9 @@ export default function Home() {
               <detail className={returned}>Returned</detail>
             </check>
             <button
+            className={Styles.button3}
               onClick={handleOnClick}
-              style={{
-                color: "#defe11",
-                background: "#00573f",
-                padding: 12,
-                fontSize: 20,
-                marginLeft: 433,
-                borderColor: "white",
-                borderRadius: 12,
-                fontFamily: "MyWebFont"
-              }}>
+              >
               Return Order
             </button>
           </a>
@@ -274,7 +267,48 @@ export default function Home() {
           margin-left: 100px;
           font-family: "MyWebFont"
         }
+
         .button1 {background-color: #4CAF50;}
+
+        .button2 {
+          position: relative;
+          overflow: hidden;
+          height: 3rem;
+          padding: 0 2rem;
+          border-radius: 1.5rem;
+          background: gray;
+          background-size:400%;
+          color: #defe11;
+          font-family: "MyWebFont"
+        }
+
+        .button2:hover::before{
+          transform: scaleX(1);
+        }
+        .button2-content{
+          position:relative;
+          z-index: 1;
+        }
+        .button2::before {
+          content: "Return Order";
+          align-content: center;
+          justify-content: center;
+          position: absolute;
+          top:0;
+          left: 0;
+          transform: scaleX(0);
+          transform-origin: 0 50%;
+          width: 100%;
+          height: inherit;
+          border-radius: inherit;
+          background: linear-gradient(
+            83.2deg,
+            #247860 10.8%,
+            #00573f 94.3%
+          );
+          transition: all 0.475s;
+        }
+
         .title a {
           background: #00573f;
           text-decoration: none;
@@ -393,3 +427,13 @@ export default function Home() {
     </div>
   );
 }
+// style={{
+//   color: "#defe11",
+//   background: "#00573f",
+//   padding: 12,
+//   fontSize: 20,
+//   marginLeft: 433,
+//   borderColor: "white",
+//   borderRadius: 12,
+//   fontFamily: "MyWebFont"
+// }}

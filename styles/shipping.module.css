@@ -100,3 +100,84 @@
     display: flex;
     font-family: 'MyWebFont';
   }
+  .button2 {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: gray;
+    background-size:400%;
+    color: #defe11;
+    font-family: "MyWebFont";
+    margin-left: 430px;
+    place-content: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .button2:hover::before{
+    transform: scaleX(1);
+    text-align: center;
+    place-content: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .button2-content{
+    position:relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .button2::before {
+    content: "Return Order";
+    text-align: center;
+    place-content: center;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      83.2deg,
+      #247860 10.8%,
+      #00573f 94.3%
+    );
+    transition: all 0.475s;
+  }
+  .button3 {
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.4rem;
+    background: linear-gradient(
+      -45deg,
+      #00573f,
+      #247a62,
+      #6c9610,
+      #a6be0d,
+      #00573f
+    );
+    background-size:400%;
+    background-position: 90% 0;
+    color: #defe11;
+    font-family: "MyWebFont";
+    margin-left: 430px;
+    place-content: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 0.8s;
+  }
+  .button3:hover {
+    background-position: 190% 50%;
+  }
+  .button3:active {
+    opacity: 0.5;
+    color: #defe11;
+    cursor: grabbing;
+  }
