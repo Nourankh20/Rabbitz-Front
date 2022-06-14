@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import creditCardStyles from "./../../styles/creditCard.module.css";
 // import "../styles/globals.css"
 import Swal from "sweetalert2";
+import axios from 'axios';
 
 const imageUrls = [
   "https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png",
