@@ -103,6 +103,37 @@ const singleProduct = ({ product }) => {
     setCVVState(cvvState);
   };
 
+
+  const payment = async () => {
+    const order = {
+      productId: _id,
+      item: name,
+      quantity: 1,
+      totalPrice: price * 100,
+      email: "nourankh201617@gmail.com",
+      address: "3nwany",
+      status: "placed",
+    };
+
+    const headers = {
+      "Access-Control-Allow-Origin": "*",
+    };
+    const response = await axios
+      .post(
+        "http://localhost:3001/order/createOrder",
+        order,
+        (headers = {
+          "Access-Control-Allow-Origin": "*",
+        })
+      )
+      .then((res) => {
+        console.log("res", res.data);
+      })
+      .catch((err) => {
+        console.log("err.message", err.message);
+      });
+  };
+
   // const validateMonth = (value) => {
   //   let expireMonthState ;
   //   if (value != false) {
@@ -208,6 +239,8 @@ const singleProduct = ({ product }) => {
         "Expire Year: ",
         expireYear
       );
+
+      payment();
       Swal.fire({
         icon: "success",
         title: "Success \n \n" + name,
