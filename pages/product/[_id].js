@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import creditCardStyles from "./../../styles/creditCard.module.css";
 // import "../styles/globals.css"
 import Swal from "sweetalert2";
-import axios from 'axios';
+import axios from "axios";
 
 const imageUrls = [
   "https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png",
@@ -56,7 +56,7 @@ const singleProduct = ({ product }) => {
 
   const validateAddress = (value) => {
     let addressState;
-    if (value.length > 2) {
+    if (value?.length > 2) {
       addressState = "has-success";
       console.log("Success");
     } else {
@@ -80,7 +80,6 @@ const singleProduct = ({ product }) => {
 
   const validateCardNumber = (value) => {
     let creditCardNumState;
-
     if (value.length == 16) {
       creditCardNumState = "has-success";
       console.log("Success");
@@ -92,9 +91,9 @@ const singleProduct = ({ product }) => {
   };
 
   const validateCVV = (value) => {
+    const cvvRegex = /^[0-9\b]+$/; 
     let cvvState;
-
-    if (value.length == 3) {
+    if (value.length == 3 && cvvRegex.test(value)) {
       cvvState = "has-success";
       console.log("Success");
     } else {
@@ -103,7 +102,6 @@ const singleProduct = ({ product }) => {
     }
     setCVVState(cvvState);
   };
-
 
   const payment = async () => {
     const order = {
@@ -251,7 +249,7 @@ const singleProduct = ({ product }) => {
     } else {
       Swal.fire({
         icon: "error",
-        title: "Please Fill Everything! \n \n " + "Check Everything",
+        title: "Please Make Sure Everything is Correct! \n \n " + "FIll Everything",
         showConfirmButton: false,
         timer: 1500,
       });
