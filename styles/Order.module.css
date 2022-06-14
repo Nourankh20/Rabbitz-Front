@@ -54,8 +54,8 @@
     font-family: 'MyWebFont';
   }
   
-  .App-header {
-    background-color: #196838;
+  .Appheader {
+
     min-height: 5vh;
     display: flex;
     flex-direction: column;
@@ -63,24 +63,25 @@
     justify-content: center;
     font-size: calc(15px + 2vmin);
     color: white;
-    color:#DFFC18;
+    color:#196838;
     font-weight:bold;
     font-family: 'MyWebFont';
   }
   
-  .App-link {
+  .Applink {
     color: #61dafb;
     font-family: 'MyWebFont';
   }
   
   .Card{
-      width: 50%;
+      width: 100%;
       display: flex;
        /* flex-wrap: wrap; */
       position: absolute;
       padding: 1% ;
-      padding-left: 30%;
+      padding-left: 40%;
       font-family: 'MyWebFont';
+      align-self: center;
   }
   
   .Image{
@@ -120,13 +121,14 @@
   }
   .StatusCard { 
     display: inline-block;
-    margin-left:50px;
+    margin-left:100px;
     height: 20pt;
     width: 75pt; 
     background-color: rgba(252, 185, 185, 0.693);
     border-radius:20cm;
     margin-top: 10%;
     font-family: 'MyWebFont';
+    align-self: center;
   
   }
   .Status{
