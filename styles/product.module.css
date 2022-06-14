@@ -9,3 +9,79 @@
     font-family: 'MyWebFont';
    
 }
+
+.button {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin-top: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: #00573f;
+    color: #defe11;
+    font-size:2rem;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+    font-family: 'MyWebFont';
+}
+
+#form button {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin-top: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: #00573f;
+    color: #defe11;
+    font-size:2rem;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+    font-family: 'MyWebFont';
+  }
+  
+  #form .button:before {
+    border-radius: 7px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #000000;
+    color: #00573f;
+    z-index: -1;
+    opacity: 90%;
+    font-family: 'MyWebFont';
+  }
+  
+#formTest .button{
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin-top: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: #00573f;
+    color: #defe11;
+    font-size:2rem;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+    font-family: 'MyWebFont';
+  }
+  
+  #form .button:hover:before {
+    width: 100%;
+    transition: .2s all;
+    font-family: 'MyWebFont';
+  }
+  
