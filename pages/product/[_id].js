@@ -110,8 +110,8 @@ const singleProduct = ({ product }) => {
       item: name,
       quantity: 1,
       totalPrice: price * 100,
-      email: "nourankh201617@gmail.com",
-      address: "3nwany",
+      email: email,
+      address: address,
       status: "placed",
     };
 
