@@ -166,12 +166,16 @@
     background-position: 90% 0;
     color: #defe11;
     font-family: "MyWebFont";
-    margin-left: 430px;
+    margin-left: 420px;
     place-content: center;
     align-content: center;
     justify-content: center;
     text-align: center;
     transition: background 0.8s;
+    border-radius: 12;
+    padding: 12;
+    font-size: medium;
+    width: max-content;
   }
   .button3:hover {
     background-position: 190% 50%;

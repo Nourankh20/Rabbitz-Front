@@ -362,6 +362,7 @@ export default function Home() {
           border-radius: 20px;
           transition: color 0.15s ease, border-color 0.15s ease;
           font-family: "MyWebFont"
+          
         }
         .card:hover,
         .card:focus,
