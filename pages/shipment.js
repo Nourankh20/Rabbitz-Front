@@ -3,6 +3,7 @@ import Head from "next/head";
 import Styles from "../styles/shipping.module.css";
 import Image from "next/image";
 import Swal from "sweetalert2";
+import axios from 'axios';
 // font-family: 'MyWebFont';
 // import { useState, useEffect } from "react";
 //import {
@@ -21,8 +22,19 @@ import Link from "next/link";
 export default function Home() {
   const [shippingState, setShippingState] = useState("placed");
   //const [buttonState, setButtonState] = useState("false");
-
+  const orderID = window.localStorage.getItem("orderID")
+  console.log('orderID', orderID)
   //REMOVE FLAG WHEN STATES ARE FINALISED (FLAG FOR TESTING). LEAVE RETURNED,DELIVERED AND SHIPPED BELOW(DONT COMMENT OR DELETE)
+
+
+  useEffect(() =>{
+    axios.get(
+      `http://localhost:3001/shipping//shipmentById/${orderID}`
+    ).then((res)=>{
+      setShippingState(res)
+    })
+  },)
+
 
   let returned = "b";
   let delivered = "b";

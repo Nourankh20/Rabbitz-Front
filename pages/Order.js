@@ -24,8 +24,11 @@ function Order() {
         `http://localhost:3001/order/${order}`
       )
     .then(( data) => {
-      console.log('data.data', data.data)
-      setOrders(data.data)
+      console.log('data.data', data.data._id)
+      setOrders(data.data)     
+      localStorage.setItem("orderID", data.data._id)
+      let id =  localStorage.getItem("orderID")
+      console.log('id', id)
       setFound(true)
     });
     }
@@ -109,7 +112,9 @@ function Order() {
                       <p> {orders.totalPrice/100} EGP</p>
                     </div>
                     <div className={styles.StatusCard}>
-                      <p className={styles.Status}>  {orders.status}</p>
+               
+                       
+                       <Link href={`/shipment`}><a className={styles.Status}>{orders.status}</a></Link>
                     </div>
                   </div>
                 </div>
