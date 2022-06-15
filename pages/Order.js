@@ -20,11 +20,13 @@ function Order() {
     },[])
 
     const find =async (e) =>{
+      console.log('order', order);
+
       axios.get(
-        `http://localhost:3001/order/${order}`
+        `http://localhost:3001/order/${order.toString()}`
       )
     .then(( data) => {
-      console.log('data.data', data.data._id)
+      console.log('data.data', data.data)
       setOrders(data.data)     
       localStorage.setItem("orderID", data.data._id)
       let id =  localStorage.getItem("orderID")
@@ -114,7 +116,7 @@ function Order() {
                     <div className={styles.StatusCard}>
                
                        
-                       <Link href={`/shipment`}><a className={styles.Status}>{orders.status}</a></Link>
+                       <Link href={`/shipment`}><a className={styles.Status}>View Status</a></Link>
                     </div>
                   </div>
                 </div>

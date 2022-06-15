@@ -28,11 +28,12 @@ export default function Home() {
 
   useEffect(() =>{
     axios.get(
-      `http://localhost:3001/shipping/shipmentById/${orderID}`
+      `http://localhost:3002/shipping/shipmentById/${orderID.toString()}`
     ).then((res)=>{
-      setShippingState(res)
+      console.log('res', res.data.status)
+      setShippingState(res.data.status)
     })
-  },)
+  },[shippingState])
 
   let returned = "b";
   let delivered = "b";
@@ -78,6 +79,30 @@ export default function Home() {
   //       setButtonState("true");
   //     }
   // });
+
+  const update = () =>{
+    if(shippingState == 'placed'){
+    axios.get(
+      `http://localhost:3002/shipping/getStatus/${orderID.toString()}`
+    ).then((res)=>{
+      console.log('res', res.data.status)
+      setShippingState(res.data.status)
+    })
+    Swal.fire({
+      icon: "success",
+      title: "Order Returned",
+      showConfirmButton: false,
+      timer: 1500,
+    });}
+    else{
+      Swal.fire({
+        icon: "error",
+        title: `Order has already been ${shippingState}`,
+        showConfirmButton: true,
+        timer: 5000,
+      });
+    }
+  }
 
   function handleOnClick() {
     if (shippingState === "placed") {
@@ -207,7 +232,7 @@ export default function Home() {
             </check>
             <button
             className={Styles.button3}
-              onClick={handleOnClick}
+              onClick={update}
               >
               Return Order
             </button>

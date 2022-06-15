@@ -16,8 +16,9 @@ const imageUrls = [
   "https://logos-world.net/wp-content/uploads/2020/09/Mastercard-Logo.png",
 ];
 
+
 const singleProduct = ({ product }) => {
-  const { name, price, _id, category, image, weight, measurement } = product;
+  const { name, price, _id, category, image, weight, measurement} = product;
   const [creditCardNum, setCreditCardNum] = useState("");
   const [cardType, setCardType] = useState("");
   const [cardHolder, setCardHolder] = useState("");
@@ -39,6 +40,7 @@ const singleProduct = ({ product }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
 
   const validateEmail = (value) => {
     const emailRegex =
@@ -273,7 +275,7 @@ const singleProduct = ({ product }) => {
         <div className={Styles.wrapper}>
           <span>
             {" "}
-            <div id="formTest">
+           { <div id="formTest">
               <Button
                 className={Styles.button}
                 variant="dark"
@@ -282,7 +284,7 @@ const singleProduct = ({ product }) => {
               >
                 Purchase
               </Button>
-            </div>
+            </div>}
           </span>
 
           <Modal show={show} onHide={handleClose}>
