@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() =>{
     axios.get(
-      `http://localhost:3001/shipping//shipmentById/${orderID}`
+      `http://localhost:3001/shipping/shipmentById/${orderID}`
     ).then((res)=>{
       setShippingState(res)
     })
