@@ -26,7 +26,6 @@ export default function Home() {
   console.log('orderID', orderID)
   //REMOVE FLAG WHEN STATES ARE FINALISED (FLAG FOR TESTING). LEAVE RETURNED,DELIVERED AND SHIPPED BELOW(DONT COMMENT OR DELETE)
 
-
   useEffect(() =>{
     axios.get(
       `http://localhost:3001/shipping//shipmentById/${orderID}`
@@ -34,7 +33,6 @@ export default function Home() {
       setShippingState(res)
     })
   },)
-
 
   let returned = "b";
   let delivered = "b";
